@@ -30,13 +30,15 @@ public class LoginServlet extends HttpServlet {
 
             HttpSession sesion = request.getSession();
 
-            sesion.setAttribute("usuario", usuarioEncontrado);
+            sesion.setAttribute("usuario", usuarioEncontrado.getNombre());
+            sesion.setAttribute("rol", usuarioEncontrado.getRol());
+            sesion.setAttribute("idUsuario", usuarioEncontrado.getId());
 
             response.sendRedirect("dashboard.jsp");
 
         } else {
 
-            response.getWriter().println("Usuario o contraseña incorrectos.");
+            response.sendRedirect("index.jsp?error=1");
 
         }
 

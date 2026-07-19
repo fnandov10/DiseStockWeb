@@ -4,20 +4,41 @@ public class Usuario {
 
     private int id;
     private String nombre;
+    private String apellido;
+    private String correo;
+    private String rol;
+    private String estado;
     private String usuario;
     private String contrasena;
-    private String rol;
 
+    // Constructor vacío
     public Usuario() {
     }
 
-    public Usuario(int id, String nombre, String usuario, String contrasena, String rol) {
+    // Constructor completo
+    public Usuario(
+            int id,
+            String nombre,
+            String apellido,
+            String correo,
+            String rol,
+            String estado,
+            String usuario,
+            String contrasena) {
+
         this.id = id;
         this.nombre = nombre;
+        this.apellido = apellido;
+        this.correo = correo;
+        this.rol = rol;
+        this.estado = estado;
         this.usuario = usuario;
         this.contrasena = contrasena;
-        this.rol = rol;
     }
+
+    // =========================
+    // ID
+    // =========================
 
     public int getId() {
         return id;
@@ -27,6 +48,10 @@ public class Usuario {
         this.id = id;
     }
 
+    // =========================
+    // NOMBRE
+    // =========================
+
     public String getNombre() {
         return nombre;
     }
@@ -34,6 +59,58 @@ public class Usuario {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+
+    // =========================
+    // APELLIDO
+    // =========================
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    // =========================
+    // CORREO
+    // =========================
+
+    public String getCorreo() {
+        return correo;
+    }
+
+    public void setCorreo(String correo) {
+        this.correo = correo;
+    }
+
+    // =========================
+    // ROL
+    // =========================
+
+    public String getRol() {
+        return rol;
+    }
+
+    public void setRol(String rol) {
+        this.rol = rol;
+    }
+
+    // =========================
+    // ESTADO
+    // =========================
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    // =========================
+    // USUARIO
+    // =========================
 
     public String getUsuario() {
         return usuario;
@@ -43,6 +120,10 @@ public class Usuario {
         this.usuario = usuario;
     }
 
+    // =========================
+    // CONTRASEÑA
+    // =========================
+
     public String getContrasena() {
         return contrasena;
     }
@@ -51,11 +132,8 @@ public class Usuario {
         this.contrasena = contrasena;
     }
 
-    public String getRol() {
-        return rol;
-    }
-
-    public void setRol(String rol) {
-        this.rol = rol;
+    // Nombre completo para mostrarlo fácilmente
+    public String getNombreCompleto() {
+        return nombre + " " + apellido;
     }
 }
